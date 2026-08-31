@@ -1,10 +1,10 @@
-# AISafety.com — JP fork
+# AISafety.com — SG fork
 
-A Japanese version of [AISafety.com/map](https://aisafety.com/map), focused on the Japan AI safety ecosystem.
+A Singapore version of [AISafety.com/map](https://aisafety.com/map), focused on the Singapore AI safety ecosystem.
 
-Live: https://aisafety-com-jp.vercel.app/map
+Live: https://aisafety-com-sg.vercel.app/map
 
-Forked from [StampyAI/AISafety.com](https://github.com/StampyAI/AISafety.com) (MIT-licensed). Thanks to Bryce Robertson and the Stampy team for sharing the code.
+Forked from [StampyAI/AISafety.com](https://github.com/StampyAI/AISafety.com) (MIT-licensed) via [kirby44/aisafety-com-jp](https://github.com/kirby44/aisafety-com-jp). Thanks to Bryce Robertson and the Stampy team for sharing the code.
 
 ## What's different from upstream
 
@@ -15,7 +15,7 @@ Forked from [StampyAI/AISafety.com](https://github.com/StampyAI/AISafety.com) (M
 - "Suggest correction" CTA removed — corrections come through the same form as new listings.
 - `Pending` status filter: form submissions land with `Status = Pending` and don't render on the map until reviewed and flipped to `Active`.
 
-## Editing the map
+## Editing the map (WIP)
 
 Content lives in Airtable, not the codebase. To add or edit organisations:
 
@@ -59,8 +59,8 @@ Magic rows (use `Long name`):
 Required in `.env.local` for local dev and on Vercel for build:
 
 ```
-AIRTABLE_TOKEN=pat...                  # PAT scoped to the JP base
-AIRTABLE_BASE_ID=app7SrMiNyaAyXB2L
+AIRTABLE_TOKEN=pat...                  # PAT scoped to the SG base
+AIRTABLE_BASE_ID=...
 ```
 
 Generate the PAT at https://airtable.com/create/tokens with scopes `data.records:read` (build-time fetch) and access limited to this base. For schema changes via API, also grant `schema.bases:read` and `schema.bases:write`.
@@ -99,4 +99,4 @@ npm run type-check   # Type check
 
 MIT — see [LICENSE](./LICENSE).
 
-Original work © 2026 StampyAI. JP fork modifications by Kazuki Kimura.
+Original work © 2026 StampyAI. JP fork by Kazuki Kimura, whose adaptation this SG fork was built from. SG fork modifications by Jared Cheang.

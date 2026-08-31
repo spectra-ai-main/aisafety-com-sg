@@ -1,7 +1,7 @@
 import { fetchAirtableRecords } from './airtable'
 
-const TABLE_ID = 'tblBBaYyXaEQ7vsqm'
-const VIEW_ID = 'viwh7TofyxVBFq705'
+const TABLE_ID = String(process.env.AIRTABLE_TABLE_ID)
+const VIEW_ID = String(process.env.AIRTABLE_VIEW_ID)
 
 const MAGIC_ROW_NAMES = ['Merch', 'Last updated', 'Suggest entry']
 
@@ -66,7 +66,7 @@ const FIELD_LIST = [
   'Link',
   'Short URL',
   'Date added',
-  'Active since',
+  // 'Active since',
   'x',
   'y',
   'Scale',
