@@ -230,7 +230,21 @@ export default function D3Map({ orgs, cutoffMonth }: D3MapProps) {
       .attr('font-size', 72)
       .style('letter-spacing', '-2.16px')
       .attr('fill', '#fff')
-      .text('Map of AI Existential Safety')
+      // .text('Map of AI Existential Safety')
+      .text('Map of AI Safety in Singapore*')
+
+    // Beta footnote, tucked directly under the title.
+    svgGroup
+      .append('text')
+      .attr('x', titleX)
+      .attr('y', titleY + 42)
+      .attr('text-anchor', 'middle')
+      .attr('font-family', 'Inter, sans-serif')
+      .attr('font-weight', 400)
+      .attr('font-size', 24)
+      .attr('fill', '#fff')
+      .style('opacity', 0.6)
+      .text('*Work In Progress, do forgive any errors!')
 
     // Add area labels
     const labelScale = 1.75
