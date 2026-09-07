@@ -76,6 +76,9 @@ const AREA_LABELS = [
   { label: 'Gone Graveyard', x: 56, y: 30 },
 ]
 
+const SUGGEST_FORM_URL =
+  'https://airtable.com/app1WnsM3frRVpcVv/pagKDMgXAA6dB2YP3/form'
+
 // An entity with no 'Active since' predates the timeline as far as we know,
 // so it always shows rather than never showing.
 function isActiveAt(activeSince: string | null, cutoffMonth?: string | null) {
@@ -245,6 +248,29 @@ export default function D3Map({ orgs, cutoffMonth }: D3MapProps) {
       .attr('fill', '#fff')
       .style('opacity', 0.6)
       .text('*Work In Progress, do forgive any errors!')
+
+    // Suggest-an-addition link, pinned to the top-right corner of the map
+    // canvas (pans/zooms with the map, since it's inside svgGroup like
+    // everything else — not fixed to the viewport).
+    const suggestX = MAP_WIDTH - 60 // right-aligned, small margin from edge
+    const suggestY = MAP_HEIGHT // small margin from top
+    svgGroup
+      .append('a')
+      .attr('xlink:href', SUGGEST_FORM_URL)
+      .attr('target', '_blank')
+      .attr('rel', 'noopener noreferrer')
+      .style('cursor', 'pointer')
+      .append('text')
+      .attr('x', suggestX)
+      .attr('y', suggestY)
+      .attr('text-anchor', 'end')
+      .attr('font-family', 'Inter, sans-serif')
+      .attr('font-weight', 400)
+      .attr('font-size', 20)
+      .attr('fill', '#fff')
+      .style('opacity', 0.8)
+      .style('text-decoration', 'underline')
+      .text('Missing something/suggesting an idea?')
 
     // Add area labels
     const labelScale = 1.75
